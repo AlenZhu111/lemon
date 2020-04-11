@@ -1,0 +1,3 @@
+<!--pages/jihua/jihua.wxml-->
+<!-- 按键组件 -->
+<tab-control titles="{{titles}}"/>

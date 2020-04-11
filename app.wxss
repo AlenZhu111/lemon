@@ -1,0 +1,4 @@
+/**app.wxss**/
+page{
+  --themeColor:"#e4b04b"
+}

@@ -1,0 +1,17 @@
+.tab-control {
+  display: flex;
+}
+.tab-control .tab-group {
+  flex: 1;
+  padding: 10rpx;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.tab-control .active {
+  color: #e4b04b;
+}
+.tab-control .active text {
+  padding: 10rpx;
+  border-bottom: #e4b04b solid 6rpx;
+}
