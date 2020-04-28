@@ -1,0 +1,32 @@
+page{
+    height: 100vh;
+    
+}
+.cpn-tab{
+    height: 100vh;
+}
+.tab-control{
+    display: flex;
+    height: 90rpx;
+}
+.tab-group{
+    
+    flex: 1;
+    padding: 10rpx;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
+}
+.active{
+    color: #e4b04b;
+    
+}
+.active text{
+    padding: 10rpx;
+    border-bottom: #e4b04b solid 6rpx;
+}
+.scroll-view{
+    
+    height: calc( 100vh - 90rpx );
+}

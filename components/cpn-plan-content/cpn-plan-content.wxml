@@ -1,0 +1,22 @@
+<!-- <view class="plan-container">
+  <scroll-view class="scroll-box" scroll-x="{{true}}" bindscroll="handleScroll"
+  bindtouchstart="touchStart"
+  bindtouchend="touchEnd">
+    <view id="item1" class="normal">
+      <view class="plan-card" style="background-color:{{colorArray[cindex]}};">
+        <input class="plan-input" placeholder="请输入内容" bindinput="handleInput"/>
+      </view>
+      <view>hello</view>
+    </view>
+    <view id="item2" class="reverse">
+      <view>hello</view>
+    </view>
+  </scroll-view>
+  
+</view> -->
+
+
+<view class="plan-card" style="background-color:{{currentColor}};">
+  <image class="image-class" bindtap="handleFinished" mode="heightFix" src="{{isFinished?'/image/jihua/lemon-active.png':'/image/jihua/lemon.png'}}"></image>
+  <view class="itemContent {{isFinished?'finished':''}}">{{planContent}}</view>
+</view>

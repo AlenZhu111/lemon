@@ -1,0 +1,18 @@
+<view class="cpn-tab">
+  <view class="tab-control">
+    <view class="tab-group {{item.isActive?'active':''}}"
+    wx:for="{{titles}}"
+    wx:key="id"
+    bind:tap="handleTap"
+    data-index="{{index}}"
+    >
+      <text>{{item.value}}</text>
+    </view>
+  </view>
+  <view class="tab-content">
+    <scroll-view class="scroll-view" scroll-y>
+      <slot></slot>
+    </scroll-view>
+    
+  </view>
+</view>

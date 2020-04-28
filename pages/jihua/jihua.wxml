@@ -1,3 +1,146 @@
 <!--pages/jihua/jihua.wxml-->
-<!-- 按键组件 -->
-<tab-control titles="{{titles}}"/>
+
+<view class="jihua-container">
+    
+
+    <cpn-tab-control titles="{{titles}}" bind:tabsItemChange="handleTabsItemChange">
+        <block wx:if="{{titles[0].isActive}}">
+            <!-- 每日计划页面 -->
+            <view class="first-tab">
+                <!-- 轮播图 -->
+                <view class="swiper">
+                    <cpn-swiper></cpn-swiper>
+                </view>
+                <view class="addPlan">
+                    <!-- 判断是否有任务 -->
+                    <view class="bg">
+                        <image src="{{isBlank1?'/image/jihua/emptybox.jpeg':''}}"/>
+                    </view>
+                    
+                    <!-- 添加任务按钮 -->
+                    <button class="addBtn" hidden="{{!hidePlanInput}}" bindtap="handleAddPlan" hover-class="hoverBtn">+</button>
+                    <block wx:if="{{!hidePlanInput}}">
+                        <view class="plan-input">
+                            <input value="{{planContent}}" placeholder="请输入计划" bindinput="handlePlanInput"/>
+                            <view class="button" bindtap="confirmPlanInput">确定</view>
+                        </view>
+                    </block>
+                      
+                    
+                    <!-- 添加任务文本 -->
+                    <view class="planGroup"
+                    wx:for="{{planList}}"
+                    wx:key="index">
+                        <view class='out'>
+                            <scroll-view scroll-x scroll-into-view='item1'>
+                              <view id='item1' class='item1'>
+                                <cpn-plan-content planContent="{{item.value}}" currentColor="{{item.color}}"></cpn-plan-content>
+                              </view>
+                              <view id='item2' class='item2'>
+                                <image src="/image/jihua/del.png" mode="heightFix" 
+                                bindtap="handlePlanDel"
+                                data-index="{{index}}"/>
+                              </view>
+                            </scroll-view>
+                        </view>
+                    </view>
+                    
+                        
+                </view> 
+            </view>
+    
+        </block>
+        <block wx:elif="{{titles[1].isActive}}">
+        <!-- 每月目标页面 -->
+        
+            <view class="second-tab">
+                <view class="addPlan">
+                    <!-- 判断是否有任务 -->
+                    <view class="bg">
+                        <image src="{{isBlank2?'/image/jihua/emptybox.jpeg':''}}"/>
+                    </view>
+                    
+                    <!-- 添加任务按钮 -->
+                    <button class="addBtn" hidden="{{!hideTargetInput}}" bindtap="handleAddTarget" hover-class="hoverBtn">+</button>
+                    <block wx:if="{{!hideTargetInput}}">
+                        <view class="plan-input">
+                            <input value="{{targetContent}}" placeholder="请输入目标" bindinput="handleTargetInput"/>
+                            <view class="button" bindtap="confirmTargetInput">确定</view>
+                        </view>
+                    </block>
+                      
+                    
+                    <!-- 添加任务文本 -->
+                    <view class="planGroup"
+                    wx:for="{{targetList}}"
+                    wx:key="index">
+                        <view class='out'>
+                            <scroll-view scroll-x scroll-into-view='item1'>
+                              <view id='item1' class='item1'>
+                                <cpn-plan-content planContent="{{item.value}}" currentColor="{{item.color}}"></cpn-plan-content>
+                              </view>
+                              <view id='item2' class='item2'>
+                                <image src="/image/jihua/del.png" mode="heightFix" 
+                                bindtap="handleTargetDel"
+                                data-index="{{index}}"/>
+                              </view>
+                            </scroll-view>
+                        </view>
+                    </view>
+                    
+                        
+                </view> 
+            </view>
+        
+        
+        </block>
+        <block wx:elif="{{titles[2].isActive}}">
+        
+        
+            <view class="third-tab">
+                <view class="addPlan">
+                    <!-- 判断是否有任务 -->
+                    <view class="bg">
+                        <image src="{{isBlank3?'/image/jihua/emptybox.jpeg':''}}"/>
+                    </view>
+                    
+                    <!-- 添加任务按钮 -->
+                    <button class="addBtn" hidden="{{!hideHabitInput}}" bindtap="handleAddHabit" hover-class="hoverBtn">+</button>
+                    <block wx:if="{{!hideHabitInput}}">
+                        <view class="plan-input">
+                            <input value="{{habitContent}}" placeholder="请输入习惯" bindinput="handleHabitInput"/>
+                            <view class="button" bindtap="confirmHabitInput">确定</view>
+                        </view>
+                    </block>
+                      
+                    
+                    <!-- 添加任务文本 -->
+                    <view class="planGroup"
+                    wx:for="{{habitList}}"
+                    wx:key="index">
+                        <view class='out'>
+                            <scroll-view scroll-x scroll-into-view='item1'>
+                              <view id='item1' class='item1'>
+                                <cpn-plan-content planContent="{{item.value}}" currentColor="{{item.color}}"></cpn-plan-content>
+                              </view>
+                              <view id='item2' class='item2'>
+                                <image src="/image/jihua/del.png" mode="heightFix" 
+                                bindtap="handleHabitDel"
+                                data-index="{{index}}"/>
+                              </view>
+                            </scroll-view>
+                        </view>
+                    </view>
+                    
+                        
+                </view> 
+            </view>        
+        </block>
+    </cpn-tab-control>
+</view>
+
+
+
+
+
+

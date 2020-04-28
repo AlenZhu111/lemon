@@ -1,4 +1,5 @@
 /**app.wxss**/
+@import "/style/iconfont.wxss";
 page{
-  --themeColor:"#e4b04b"
+  --themeColor:"#82B2D2";
 }

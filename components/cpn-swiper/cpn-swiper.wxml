@@ -1,0 +1,10 @@
+<view class="cpn-swiper">
+  <swiper indicator-dots indicator-color="#82b2d2" autoplay circular> 
+    <swiper-item 
+    class="swiper-item"
+    wx:for="{{9}}"
+    >
+      <image src="/image/cpn-swiper/{{item+1}}.jpg" mode="widthFix"/>
+    </swiper-item>
+  </swiper>
+</view>

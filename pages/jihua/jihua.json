@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "tab-control":"/components/tab-control/tab-control"
+    "cpn-tab-control":"/components/cpn-tab-control/cpn-tab-control",
+    "cpn-plan-content":"/components/cpn-plan-content/cpn-plan-content",
+    "cpn-swiper":"/components/cpn-swiper/cpn-swiper"
   }
 }

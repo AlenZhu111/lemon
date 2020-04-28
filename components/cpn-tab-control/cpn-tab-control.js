@@ -1,6 +1,6 @@
 Component({
   data: {
-    currentIndex:0
+    isActive:false
   },
   properties: {
     titles:{
@@ -10,10 +10,11 @@ Component({
   },
   methods: {
     handleTap(e){
-      const index=e.currentTarget.dataset.index
+      const index=e.currentTarget.dataset.index;
       this.setData({
         currentIndex:index
-      })
+      });
+      this.triggerEvent("tabsItemChange",{index});
     }
   }
 })
